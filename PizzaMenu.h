@@ -1,13 +1,11 @@
-//
-// Created by pavan on 2025/08/24.
-//
-
 #ifndef PRAC2_PIZZAMENU_H
 #define PRAC2_PIZZAMENU_H
+#include "Menus.h"
 
-
-class PizzaMenu {
+class PizzaMenu : public Menus{
+    public:
+        virtual void notifyObservers(std::string message);
 };
 
 
-#endif //PRAC2_PIZZAMENU_H
+#endif                           
