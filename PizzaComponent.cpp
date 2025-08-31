@@ -3,3 +3,11 @@
 //
 
 #include "PizzaComponent.h"
+
+std::string PizzaComponent::getName(){
+    return name;
+}
+
+double PizzaComponent::getPrice(){
+    return price;
+}

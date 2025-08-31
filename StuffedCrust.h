@@ -6,7 +6,7 @@
 #define PRAC2_STUFFEDCRUST_H
 
 
-class StuffedCrust {
+class StuffedCrust : public Decorator {
 };
 
 
