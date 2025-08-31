@@ -1,0 +1,9 @@
+//
+// Created by pavan on 2025/08/24.
+//
+
+#include "ReguarPrice.h"
+
+double ReguarPrice::applyDiscount() {
+    return price; 
+}
