@@ -2,14 +2,17 @@
 #define ORDER_H
 
 #include "Strategy.h"
+#include "BulkDiscount.h"
 #include "State.h"
 #include "PizzaComponent.h"
+#include "FamilyDiscount.h"
+#include "RegularPrice.h"
 #include <vector>
 #include <iostream>
 
 class Order {
 public:
-    Order(Strategy* strategy, State* state);
+    Order(Strategy* strategy, State* state, bool isFamily);
     double applyDiscount(double percentage);
     void addToOrder(PizzaComponent* pizza);
     void setState(State* newState);
@@ -27,6 +30,7 @@ private:
     State* state;
     Strategy* strategy;
     std::vector<PizzaComponent*> order;
+    bool isFamily;
 };
 
 #endif 

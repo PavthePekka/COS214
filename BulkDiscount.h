@@ -7,8 +7,9 @@
 
 #include "Strategy.h"
 class BulkDiscount : public Strategy{
-    BulkDiscount(double p) : Strategy(p) {}
-    double applyDiscount() override;
+    public:
+        BulkDiscount(double p) : Strategy(p) {}
+        double applyDiscount() override;
 };
 
 

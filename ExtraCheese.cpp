@@ -2,12 +2,7 @@
 // Created by pavan on 2025/08/24.
 //
 #include "ExtraCheese.h"
-ExtraCheese::ExtraCheese() : Decorator() {
-   
-}
-
-
-
+ExtraCheese::ExtraCheese() : Decorator() {}
 
 void ExtraCheese::printPizza() {
     std::cout << "Name: " << getName() << "Price: " << getPrice() << std::endl;

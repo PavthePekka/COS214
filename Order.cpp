@@ -1,6 +1,6 @@
 #include "Order.h"
 
-Order::Order(Strategy* strategy, State* state) : strategy(strategy), state(state) {}
+Order::Order(Strategy* strategy, State* state, bool isFamily) : strategy(strategy), state(state), isFamily(isFamily) {}
 
 Order::~Order() {
     if(state){
@@ -15,7 +15,6 @@ Order::~Order() {
 
 double Order::applyDiscount(double percentage) {
     // Apply discount using the strategy
-   
     if (strategy)
         return strategy->applyDiscount();
     return 0.0;
@@ -23,6 +22,27 @@ double Order::applyDiscount(double percentage) {
 
 void Order::addToOrder(PizzaComponent* pizza){
     order.push_back(pizza);
+    if(isFamily){
+        if(strategy){
+            delete strategy;
+            strategy = NULL;
+        }
+        strategy = new FamilyDiscount(getPrice());
+    }
+    else if(order.size() >= 5){
+        if(strategy){
+            delete strategy;
+            strategy = NULL;
+        }
+        strategy = new BulkDiscount(getPrice());
+    }
+    else{
+        if(strategy){
+            delete strategy;
+            strategy = NULL;
+        }
+        strategy = new RegularPrice(getPrice());
+    }
 }
 
 void Order::setState(State* newState){

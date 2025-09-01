@@ -7,9 +7,9 @@
 #include "Strategy.h"
 
 class FamilyDiscount : public Strategy {
-    FamilyDiscount(double p) : Strategy(p) {}
-    double applyDiscount() override;
+    public:
+        FamilyDiscount(double p) : Strategy(p) {}
+        double applyDiscount() override;
 };
-
 
 #endif //PRAC2_FAMILYDISCOUNT_H

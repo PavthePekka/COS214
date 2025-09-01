@@ -7,9 +7,9 @@
 
 #include "Strategy.h"
 class RegularPrice : public Strategy {
-    RegularPrice(double p) : Strategy(p) {}
-    double applyDiscount() override;
+    public:
+        RegularPrice(double p) : Strategy(p) {}
+        double applyDiscount() override;
 };
-
 
 #endif //PRAC2_REGUARPRICE_H
