@@ -15,6 +15,7 @@ Order::~Order() {
 
 double Order::applyDiscount(double percentage) {
     // Apply discount using the strategy
+   
     if (strategy)
         return strategy->applyDiscount();
     return 0.0;
