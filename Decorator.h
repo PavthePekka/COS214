@@ -8,10 +8,7 @@
 
 class Decorator : public PizzaComponent {
     public:
-        virtual void add(PizzaComponent* pizza) override;
         void printPizza() override;
-      
-        
 
     private:
         PizzaComponent* pizza;

@@ -8,5 +8,4 @@
 
 double BulkDiscount::applyDiscount() {
     return price * 0.9; 
-   
 }

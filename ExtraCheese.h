@@ -11,7 +11,6 @@
 
 class ExtraCheese : public Decorator {
     public:
-        virtual void add(PizzaComponent* pizza) override;
         void printPizza() override;
         std::string getName() override;
         double getPrice() override;
