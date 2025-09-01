@@ -1,13 +1,10 @@
-//
-// Created by pavan on 2025/08/24.
-//
-
 #ifndef PRAC2_SPECIALSMENU_H
 #define PRAC2_SPECIALSMENU_H
+#include "Menus.h"
 
-
-class SpecialsMenu {
+class SpecialsMenu : public Menus{
+    public:
+        virtual void notifyObservers(std::string message);
 };
 
-
-#endif //PRAC2_SPECIALSMENU_H
+#endif

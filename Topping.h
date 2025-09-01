@@ -1,13 +1,16 @@
-//
-// Created by pavan on 2025/08/24.
-//
-
 #ifndef PRAC2_TOPPING_H
 #define PRAC2_TOPPING_H
+#include "PizzaComponent.h"
 
-
-class Topping {
+class Topping : public PizzaComponent{
+    private:
+        std::string name;
+        double price;
+    public:
+        Topping(double price, std::string name);
+        virtual double getPrice() const override;
+        virtual std::string getName() const override;
 };
 
 
-#endif //PRAC2_TOPPING_H
+#endif
