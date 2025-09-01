@@ -21,5 +21,8 @@ void PreparingState::complete(Order* order){
 
 void PreparingState::cancel(Order* order){
     std::cout << "Order cancelled during preparation. Moving back to Order state.\n";
-    order->setState(new OrderState());
+    if(order){
+        delete order;
+        order = NULL;
+    }
 }

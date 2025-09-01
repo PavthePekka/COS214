@@ -3,8 +3,12 @@
 ToppingGroup::ToppingGroup(double price, std::string name) : PizzaComponent(price, name){}
 
 ToppingGroup::~ToppingGroup(){
-    for(std::vector<PizzaComponent*>::const_iterator it = toppings.begin(); it != toppings.end(); ++it)
-        delete *it;
+    for(int i = 0; i < toppings.size(); i++){
+        if(toppings[i]){
+            delete toppings[i];
+            toppings[i] = NULL;
+        }
+    }
 }
 
 void ToppingGroup::add(PizzaComponent* component){

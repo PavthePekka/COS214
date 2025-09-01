@@ -1,10 +1,18 @@
 #include "Menus.h"
 
 Menus::~Menus(){
-    for(int i = 0; i < observers.size(); i++)
-        delete observers[i];
-    for(int i = 0; i < pizzas.size(); i++)
-        delete pizzas[i];
+    for(int i = 0; i < observers.size(); i++){
+        if(observers[i]){
+            delete observers[i];
+            observers[i] = NULL;
+        }
+    }
+    for(int i = 0; i < pizzas.size(); i++){
+        if(pizzas[i]){
+            delete pizzas[i];
+            pizzas[i] = NULL;
+        }
+    }
 }
 
 void Menus::addObserver(Observer* observer){

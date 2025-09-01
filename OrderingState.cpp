@@ -22,5 +22,8 @@ void OrderState::complete(Order* order){
 
 void OrderState::cancel(Order* order){
     std::cout << "Cancelling the following order:\n" << order->getOrderName() << "\n";
-    delete order;
+    if(order){
+        delete order;
+        order = NULL;
+    }
 }

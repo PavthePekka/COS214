@@ -16,7 +16,10 @@ void FinishingState::cook(Order* order){
 
 void FinishingState::complete(Order* order){
     std::cout << "Following order is completed and ready for pickup :\n" << order->getOrderName() << "\nTotal: R" << order->getPrice() << "\n";
-    delete order;
+    if(order){
+        delete order;
+        order = NULL;
+    }
 }
 
 void FinishingState::cancel(Order* order){

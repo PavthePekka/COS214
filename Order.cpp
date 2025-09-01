@@ -3,15 +3,20 @@
 Order::Order(Strategy* strategy, State* state) : strategy(strategy), state(state) {}
 
 Order::~Order() {
-    delete state;
-    delete strategy;
+    if(state){
+        delete state;
+        state = NULL;
+    }
+    if(strategy){
+        delete strategy;
+        strategy = NULL;
+    }
 }
 
 double Order::applyDiscount(double percentage) {
     // Apply discount using the strategy
-    if (strategy) {
+    if (strategy)
         return strategy->applyDiscount();
-    }
     return 0.0;
 }
 
@@ -20,7 +25,10 @@ void Order::addToOrder(Pizza* pizza){
 }
 
 void Order::setState(State* newState){
-    delete state;
+    if(state){
+        delete state;
+        state = NULL;
+    }
     state = newState;
     std::cout << "Order state changed to: " << state->getStateName() << "\n";
 }
