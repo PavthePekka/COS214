@@ -1,17 +1,25 @@
+//
+// Created by pavan on 2025/08/24.
+//
+
 #ifndef PRAC2_PIZZACOMPONENT_H
 #define PRAC2_PIZZACOMPONENT_H
 
 #include <string>
-
-class PizzaComponent{
+#include <iostream>
+class PizzaComponent
+{
     private:
         double price;
         std::string name;
+
     public:
-        PizzaComponent(double price, std::string name);
-        virtual ~PizzaComponent();
-        virtual std::string getName() const = 0;
-        virtual double getPrice() const = 0;
+        virtual std::string getName() = 0;
+        virtual double getPrice() = 0;
+        virtual void printPizza();
+        virtual void add(PizzaComponent* pizza) = 0;
+        
 };
 
-#endif  
+
+#endif //PRAC2_PIZZACOMPONENT_H
