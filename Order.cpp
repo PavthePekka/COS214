@@ -20,7 +20,7 @@ double Order::applyDiscount(double percentage) {
     return 0.0;
 }
 
-void Order::addToOrder(Pizza* pizza){
+void Order::addToOrder(PizzaComponent* pizza){
     order.push_back(pizza);
 }
 
@@ -39,18 +39,18 @@ State* Order::getState() const{
 
 std::string Order::getOrderName() const{
     std::string text = "Order:\n";
-    for(Pizza* pizza : order)
+    for(PizzaComponent* pizza : order)
         text += pizza->getName() + "\n";
     return text;
 }
 
-std::vector<Pizza*> Order::getOrder() const{
+std::vector<PizzaComponent*> Order::getOrder() const{
     return order;
 }
 
 double Order::getPrice() const{
     double price = 0.0;
-    for(Pizza* pizza : order)
+    for(PizzaComponent* pizza : order)
         price += pizza->getPrice();
     return price;
 }

@@ -3,18 +3,19 @@
 
 #include "Strategy.h"
 #include "State.h"
-#include "Pizza.h"
+#include "PizzaComponent.h"
 #include <vector>
+#include <iostream>
 
 class Order {
 public:
     Order(Strategy* strategy, State* state);
     double applyDiscount(double percentage);
-    void addToOrder(Pizza* pizza);
+    void addToOrder(PizzaComponent* pizza);
     void setState(State* newState);
     State* getState() const;
     std::string getOrderName() const;
-    std::vector<Pizza*> getOrder() const;
+    std::vector<PizzaComponent*> getOrder() const;
     double getPrice() const;
     void handleOrder();
     void prepare();
@@ -25,7 +26,7 @@ public:
 private:
     State* state;
     Strategy* strategy;
-    std::vector<Pizza*> order;
+    std::vector<PizzaComponent*> order;
 };
 
 #endif 
